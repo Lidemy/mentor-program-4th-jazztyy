@@ -9,4 +9,5 @@
 ![](https://i.imgur.com/Gz7d9oI.gif)
 
 4. 寫作業。
-5. 
+5. 寫完後會有變更，所以要使用 git commit -am"訊息"，將變更的部分 commit 起來。
+6. 寫完後，將 branch push 到遠端的 repository 
