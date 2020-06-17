@@ -7,7 +7,7 @@
 3. 轉換到新的 branch，可以順便檢查是否成功。
 ![](https://i.imgur.com/Gz7d9oI.gif)
 
-4. 寫作業。
+4. 寫作業，新增的檔案要先用 `git add` 加入。
 5. 寫完後會有變更，所以要使用 `git commit -am"訊息"`，將變更的部分 commit 起來。
 6. 寫完後，將 branch push 到遠端的 repository 
 ![](https://i.imgur.com/PqdTrq7.gif)
