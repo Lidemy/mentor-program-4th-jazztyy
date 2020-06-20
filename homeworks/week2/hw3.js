@@ -1,8 +1,7 @@
 function reverse(str) {
   let ans = []
-  let arr = str.split('')
-  for(let i = arr.length; i >= 0; i--){
-      ans.push(arr[i])
+  for(let i = str.length; i >= 0; i--){
+      ans.push(str[i])
   }
   return ans.join('')
 }
