@@ -88,4 +88,3 @@
 
 ## 開心地開始你的 git 生活吧
 - 朋友，我只能教你到這了，假如你想要學會更高深的技術，我有幾個 google 上認識的朋友可以介紹給你認識，[為你自己寫 git](https://gitbook.tw/)、[連猴子都能懂的 Git 入門指南](https://backlog.com/git-tutorial/tw/)、[git 學習小遊戲](https://learngitbranching.js.org/?locale=zh_TW)，希望你能好好的使用 git 去彌補你過去犯下的錯誤。
->>>>>>> 6e764d1297ecb13bfa1139c661fb243a2de4c006
