@@ -1,8 +1,8 @@
 function printFactor(n) {
-  for (let i = 1; i <= n; i++){
-      if(!(n % i)){
-          console.log(i);
-      }
+  for (let i = 1; i <= n; i += 1) {
+    if (!(n % i)) {
+      console.log(i);
+    }
   }
 }
 
