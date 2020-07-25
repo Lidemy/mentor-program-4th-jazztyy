@@ -21,6 +21,11 @@
         body{
             font-family: myFont;
         }
+        @media screen and (max-width: 768px){
+            body{
+                background: #e8efee;
+            }
+        }
         a{
             text-decoration: none;
             color: #000;
@@ -34,6 +39,15 @@
         }
         h1:hover{
             transform: scale(1.2);
+        }
+        @media screen and (max-width: 768px){
+            h1 .logo{
+                font-size: 60px;
+                text-align: center;
+            }
+            h1:hover{
+                transform: scale(1.05);
+            }
         }
         nav{
             max-width: 1440px;
@@ -61,6 +75,38 @@
             background: #ff7286;
             color: white;
         }
+        @media screen and (max-width: 768px){
+            nav{
+                flex-direction: column;
+                padding: 20px 0 0;
+            }
+            nav ul{
+                width: 100%;
+            }
+            nav ul li {
+                width: 25%;
+                text-align: center;
+                font-size: 25px;
+            }
+            nav ul li a{
+                display: block;
+                padding: 20px;
+                margin: 0;
+                border: none;
+                border-radius: 0;
+            }
+        }
+        @media screen and (max-width: 600px){
+            nav ul li {
+                width: 100%;
+                text-align: center;
+                font-size: 25px;
+            }
+            nav ul{
+                padding-top: 20px;
+                flex-direction: column;
+            }
+        }
         .banner{
             position: relative;
             height: 500px;
@@ -86,6 +132,16 @@
             font-size: 16px;
             padding: 0 20px;
         }
+        @media screen and (max-width: 768px){
+            section{
+                font-size: 20px;
+            }
+        }
+        @media screen and (max-width: 600px){
+            section{
+                padding: 0;
+            }
+        }
         h2{
             font-size: 26px;
             font-weight: 800;
@@ -93,6 +149,18 @@
             display: inline-block;
             margin: 80px 0 35px;
             padding: 0 15px;
+        }
+        @media screen and (max-width: 768px){
+            h2{
+                margin: 40px 0 35px;
+                font-size: 35px;
+            }
+        }
+        @media screen and (max-width: 600px){
+            h2{
+                font-size: 35px;
+                font-weight: 600;
+            }
         }
         .restaurant__introduce p{
             margin-bottom: 20px;
@@ -134,6 +202,19 @@
         .menu__photo img:hover{
             transform: scale(1.05);
         }
+        @media screen and (max-width: 768px){
+            .menu__photo{
+            display: block;
+            font-size: 0px;
+            }
+            .menu__photo a{
+                display: inline-block;
+                width: 50%;
+            }
+            .menu__photo img{
+                display: block;
+            }
+        }
         .customer{
             display: flex;
             margin-top: 50px;
@@ -157,6 +238,25 @@
         }
         .customer__photo img{
             width: 105px;
+        }
+        @media screen and (max-width: 768px){
+            .customer>div{
+                border: 1px solid #a3dea2;
+            }
+        }
+        @media screen and (max-width: 600px){
+            .customer{
+            flex-direction: column;
+            }
+            .customer>div{
+                border: 0;
+                border-bottom: 1px solid #a3dea2;
+                width: 100%;
+                margin: 0 0 70px;
+            }
+            .customer>div:nth-child(3){
+                margin-bottom: 0;
+            }
         }
         footer{
             background: #e8efee;
@@ -195,56 +295,6 @@
             padding: 15px;
         }
         @media screen and (max-width: 768px){
-            body{
-                background: #e8efee
-            }
-            h2{
-                margin: 40px 0 35px;
-                font-size: 35px;
-            }
-            section{
-                font-size: 20px;
-            }
-            nav{
-                flex-direction: column;
-                padding: 20px 0 0;
-            }
-            h1 .logo{
-                font-size: 60px;
-                text-align: center;
-            }
-            h1:hover{
-                transform: scale(1.05);
-            }
-            nav ul{
-                width: 100%;
-            }
-            nav ul li {
-                width: 25%;
-                text-align: center;
-                font-size: 25px;
-            }
-            nav ul li a{
-                display: block;
-                padding: 20px;
-                margin: 0;
-                border: none;
-                border-radius: 0;
-            }
-            .menu__photo{
-            display: block;
-            font-size: 0px;
-            }
-            .menu__photo a{
-                display: inline-block;
-                width: 50%;
-            }
-            .menu__photo img{
-                display: block;
-            }
-            .customer>div{
-                border: 1px solid #a3dea2;
-            }
             footer{
                 margin-top: 0;
                 font-size: 20px;
@@ -275,22 +325,6 @@
             }
         }
         @media screen and (max-width: 600px){
-            h2{
-                font-size: 35px;
-                font-weight: 600;
-            }
-            section{
-                padding: 0;
-            }
-            nav ul li {
-                width: 100%;
-                text-align: center;
-                font-size: 25px;
-            }
-            nav ul{
-                padding-top: 20px;
-                flex-direction: column;
-            }
             .restaurant__introduce{
                 padding: 0 20px;
             }
@@ -310,18 +344,6 @@
             }
             .restaurant__order button:nth-child(1):hover, .restaurant__order button:nth-child(2):hover{
                 transform: scale(1.05);
-            }
-            .customer{
-            flex-direction: column;
-            }
-            .customer>div{
-                border: 0;
-                border-bottom: 1px solid #a3dea2;
-                width: 100%;
-                margin: 0 0 70px;
-            }
-            .customer>div:nth-child(3){
-                margin-bottom: 0;
             }
         }
     </style>
