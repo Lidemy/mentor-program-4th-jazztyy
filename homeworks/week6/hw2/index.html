@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/minireset.css/0.0.2/minireset.css'/>
+    <title>新拖延運動報名表單</title>
+    <style>
+        body{
+            font-family: '微軟正黑體';
+        }
+        form{
+            border-top: #fad312 solid 8px;
+            padding: 50px 40px 35px;
+        }
+        h1{
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 35px;
+        }
+        header li {
+            font-size: 14px;
+            margin-bottom: 11px;
+        }
+        header p{
+            color: red;
+            margin: 11px 0 55px;
+        }
+        h2{
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        h3{
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+        h2::after{
+            content: ' *';
+            color: red;
+        }
+        main input{
+            width: 220px;
+            height: 23px;
+            margin-bottom: 50px;
+            border: #d0d0d0 solid 1px;
+        }
+        main ul li:nth-child(4){
+            display: flex;
+            flex-direction: column;
+        }
+        main ul li p{
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        main ul li div:nth-child(3){
+            margin-top: -30px;
+        }
+        .radio{
+            height: 12px;
+            width: 12px;
+            margin-right: 10px;
+        }
+        footer input{
+            border: 0;
+            background: #fad312;
+            padding: 12px 32px;
+            border-radius: 3px;
+            font-size: 15px;
+            margin-bottom: 34px;
+        }
+        footer input p{
+            font-size: 14px;
+        }
+        @media screen and (min-width: 768px){
+            header{
+                text-align: center;
+            }
+            header p{
+                margin-bottom: 10px;
+            }
+            main ul{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+            }
+            main input{
+                width: 100%;
+            }
+            main ul li{
+                width: 30%;
+            }
+            main ul li input{
+                margin-bottom: 40px;
+            }
+            footer{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <header>
+            <h1>新拖延運動報名表單</h1>
+            <ul>
+                <li>活動日期：2020/12/10 ~ 2020/12/11</li>
+                <li>活動地點：台北市大安區新生南路二段1號</li>
+            </ul>
+            <p>* 必填</p>
+        </header>
+        <main>
+            <ul>
+                <li>
+                    <h2>暱稱</h2>
+                    <input type="text" placeholder="您的回答" required>
+                </li>
+                <li>
+                    <h2>電子郵件</h2>
+                    <input type="text" placeholder="您的電子郵件" required>
+                </li>
+                <li>
+                    <h2>手機號碼</h2>
+                    <input type="text" placeholder="您的手機號碼" required>
+                </li>
+                <li>
+                    <h2>報名類型</h2>
+                    <div>
+                        <input class="radio" type="radio" name="game__type" required><span>躺在床上用想像力實作</span>
+                    </div>
+                    <div>
+                        <input class="radio" type="radio" name='game__type' required><span>趴在地上滑手機找現成的</span>
+                    </div>
+                </li>
+                <li>
+                    <h2>怎麼知道這個活動的？</h2>
+                    <input type="text" placeholder="您的回答" required>
+                </li>
+                <li>
+                    <h3>其他</h3>
+                    <p>對活動的一些建議
+</p>
+                    <input type="text" placeholder="您的回答">
+                </li>
+            </ul>
+        </main>
+        <footer>
+            <input type="submit" value="提交">
+            <p>請勿透過表單送出您的密碼。</p>
+        </footer>
+    </form>
+</body>
+</html>
