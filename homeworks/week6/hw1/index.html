@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>咬一口廚房</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/minireset.css/0.0.2/minireset.min.css'/>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: myFont;
+            src: local('微軟正黑體');
+            unicode-range: U+4E00-9FFF;
+        }
+        @font-face {
+            font-family: myFont;
+            src: url(/week6/hw1/font/Questrial-Regular.ttf);
+            unicode-range: U+00-007F;
+        }
+
+        body{
+            font-family: myFont;
+        }
+        @media screen and (max-width: 768px){
+            body{
+                background: #e8efee;
+            }
+        }
+        a{
+            text-decoration: none;
+            color: #000;
+        }
+        .logo{
+            color: #489846;
+            font-size: 30px;
+        }
+        h1{
+            transition: all 0.5s ease-out;
+        }
+        h1:hover{
+            transform: scale(1.2);
+        }
+        @media screen and (max-width: 768px){
+            h1 .logo{
+                font-size: 60px;
+                text-align: center;
+            }
+            h1:hover{
+                transform: scale(1.05);
+            }
+        }
+        nav{
+            max-width: 1440px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        nav ul{
+            display: flex;
+        }
+        nav ul li a{
+            display: inline-block;
+            margin:20px 10px 20px 0;
+            padding: 10px 25px;
+            border-radius: 10px;
+            transition: all, 0.5s;
+        }
+        nav ul li:nth-child(1) a{
+            background: #ff7286;
+            color: white;
+        }
+        nav ul li a:hover{
+            background: #ff7286;
+            color: white;
+        }
+        @media screen and (max-width: 768px){
+            nav{
+                flex-direction: column;
+                padding: 20px 0 0;
+            }
+            nav ul{
+                width: 100%;
+            }
+            nav ul li {
+                width: 25%;
+                text-align: center;
+                font-size: 25px;
+            }
+            nav ul li a{
+                display: block;
+                padding: 20px;
+                margin: 0;
+                border: none;
+                border-radius: 0;
+            }
+        }
+        @media screen and (max-width: 600px){
+            nav ul li {
+                width: 100%;
+                text-align: center;
+                font-size: 25px;
+            }
+            nav ul{
+                padding-top: 20px;
+                flex-direction: column;
+            }
+        }
+        .banner{
+            position: relative;
+            height: 500px;
+            background: url(/week6/hw1/img/2.jpg) no-repeat center/cover;
+        }
+        .banner::after{
+            content: '咬一口廚房';
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            color: white;
+            font-size: 45px;
+            font-weight: 600;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        section{
+            max-width:1440px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 16px;
+            padding: 0 20px;
+        }
+        @media screen and (max-width: 768px){
+            section{
+                font-size: 20px;
+            }
+        }
+        @media screen and (max-width: 600px){
+            section{
+                padding: 0;
+            }
+        }
+        h2{
+            font-size: 26px;
+            font-weight: 800;
+            border-left: 15px solid #a3dea2;
+            display: inline-block;
+            margin: 80px 0 35px;
+            padding: 0 15px;
+        }
+        @media screen and (max-width: 768px){
+            h2{
+                margin: 40px 0 35px;
+                font-size: 35px;
+            }
+        }
+        @media screen and (max-width: 600px){
+            h2{
+                font-size: 35px;
+                font-weight: 600;
+            }
+        }
+        .restaurant__introduce p{
+            margin-bottom: 20px;
+        }
+        .restaurant__order button{
+            border: none;
+            font-size: 26px;
+            padding: 60px 80px;
+            color: #3e613d;
+            font-weight: 800;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 0 5px gray;
+        }
+        .restaurant__order button:nth-child(1){
+            margin-right: 20px;
+            background: #a8e8e1;
+            transition: all, 0.4s;
+        }
+        .restaurant__order button:nth-child(2){
+            background: #f9f9b5;
+        }
+        .restaurant__order button:nth-child(1):hover, .restaurant__order button:nth-child(2):hover{
+            transform: scale(0.95);
+        }
+        .menu{
+            max-width: 100%;
+            padding: 0;
+        }
+        .menu__photo{
+            display: flex;
+            overflow: hidden;
+        }
+        .menu__photo img{
+            display: block;
+            margin: 0 auto;
+            transition: all 0.4s ease-out;
+        }
+        .menu__photo img:hover{
+            transform: scale(1.05);
+        }
+        @media screen and (max-width: 768px){
+            .menu__photo{
+            display: block;
+            font-size: 0px;
+            }
+            .menu__photo a{
+                display: inline-block;
+                width: 50%;
+            }
+            .menu__photo img{
+                display: block;
+            }
+        }
+        .customer{
+            display: flex;
+            margin-top: 50px;
+        }
+        .customer>div{
+            width: 33%;
+            border: 1px solid #c7e5ec;
+            margin-right: 15px;
+            padding: 40px 20px;
+            word-wrap:break-word;
+        }
+        .customer div:last-child{
+            margin-right: 0;
+        }
+        .customer__photo{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: -100px;
+            margin-bottom: 20px;
+        }
+        .customer__photo img{
+            width: 105px;
+        }
+        @media screen and (max-width: 768px){
+            .customer>div{
+                border: 1px solid #a3dea2;
+            }
+        }
+        @media screen and (max-width: 600px){
+            .customer{
+            flex-direction: column;
+            }
+            .customer>div{
+                border: 0;
+                border-bottom: 1px solid #a3dea2;
+                width: 100%;
+                margin: 0 0 70px;
+            }
+            .customer>div:nth-child(3){
+                margin-bottom: 0;
+            }
+        }
+        footer{
+            background: #e8efee;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+        .restaurant__info{
+            padding: 35px 20px;
+            max-width: 1440px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        .restaurant__info>div{
+            text-align: right;
+        }
+        .restaurant__info>div ul{
+            margin-top: 15px;
+            display: flex;
+        }
+        .restaurant__info>div a:hover{
+            color: red;
+        }
+        .restaurant__info>ul li{
+            padding: 5px 0;
+        }
+        .restaurant__info>div li:nth-child(1)::after, .restaurant__info>div li:nth-child(2) ::after{
+            content: '/';
+            margin: 0 2px;
+            color: black;
+        }
+        .copyright{
+            background: #35564b;
+            text-align: center;
+            color: white;
+            padding: 15px;
+        }
+        @media screen and (max-width: 768px){
+            footer{
+                margin-top: 0;
+                font-size: 20px;
+            }
+            .restaurant__info{
+                padding: 20px;
+                flex-direction: column-reverse;
+                align-items: center;
+                text-align: center;
+            }
+            .restaurant__info .logo{
+                text-align: center;
+                margin: 0;
+                font-size: 50px;
+            }
+            .restaurant__info>div{
+                margin-bottom: 10px;
+            }
+            .restaurant__info>div a{
+                font-size: 22px;
+            }
+            .copyright{
+                display: flex;
+                flex-direction: column-reverse;
+            }
+            .copyright span:nth-child(2){
+                padding-bottom: 5px;
+            }
+        }
+        @media screen and (max-width: 600px){
+            .restaurant__introduce{
+                padding: 0 20px;
+            }
+            .restaurant__order{
+                overflow: hidden;
+            }
+            .restaurant__order button{
+                width: 100%;
+                padding: 50px 0;
+                color: #3e613d;
+                font-weight: 800;
+                border-radius: 0;
+                box-shadow: none;
+            }
+            .restaurant__order button:nth-child(1){
+                margin: 0;
+            }
+            .restaurant__order button:nth-child(1):hover, .restaurant__order button:nth-child(2):hover{
+                transform: scale(1.05);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1><a href="#" class="logo">Just A Bite!</a></h1>
+            <ul>
+                <li><a href="#">抽個大獎</a></li>
+                <li><a href="#">我要點餐</a></li>
+                <li><a href="#">查詢訂單</a></li>
+                <li><a href="#">常見問題</a></li>
+            </ul>
+        </nav>
+        <div class="banner"></div>
+    </header>
+    <main>
+        <section>
+            <h2>當輕食之風盛起</h2>
+            <div class="restaurant__introduce">
+                <p>由於現代人生活忙碌，常以外食為主，當高糖、高鹽、高油成為人們的日常，會導致慢性疾病與肥胖的機率大增。</p>
+                <p>我們定期走訪農田，選用最天然、營養的食材，以簡單的烹調方式處理，最大化忠實呈現食材原本的鮮味。</p>
+                <p>咬一口不只賣餐點，我們希望能夠讓大家愛上料理的魅力，餐館特意打造全開放式廚房，烹調透明化，也不定時舉辦美食廚房DIY，讓大家體驗不需要過多調味，就能擁有千變萬化的食物口感。</p>
+            </div>
+            <div class="restaurant__order">
+                <button>我要點餐</button><button>查詢訂單</button>
+            </div>
+        </section>
+        <section class="menu">
+            <h2>Menu 搶先看</h2>
+            <div class="menu__photo">
+                <a href="#"><img src="/week6/hw1/img/f-001.png" alt=""></a>
+                <a href="#"><img src="/week6/hw1/img/f-002.png" alt=""></a>
+                <a href="#"><img src="/week6/hw1/img/f-003.png" alt=""></a>
+                <a href="#"><img src="/week6/hw1/img/f-004.png" alt=""></a>
+            </div>
+        </section>
+        <section>
+            <h2>吃過都說好</h2>
+            <div class="customer">
+                <div>
+                    <div class="customer__photo">
+                        <img src="/week6/hw1/img/p-1.png" alt="">
+                        <span>國父桑</span>
+                    </div>
+                    <p class="customer__reviews">我一生疲於建國，去過日本，去過歐洲，卻從未到過台北101，也從來沒有吃過這麼好吃的東西...今天在時空旅行者的幫助下我終於吃到了...此生再無遺憾 QAQ!!</p>
+                </div>
+                <div>
+                    <div class="customer__photo">
+                        <img src="/week6/hw1/img/p-2.png" alt="">
+                        <span>可達鴨</span>
+                    </div>
+                    <p class="customer__reviews">三雙鞋等於30，兩個人加一雙鞋等於20，一雙冰淇淋加一雙冰淇淋加一個人等於13，那$#%$#%^%$^##$%等於多少...唉，大概咬一口就知道了!!!</p>
+                </div>
+                <div>
+                    <div class="customer__photo">
+                        <img src="/week6/hw1/img/p-3.png" alt="">
+                        <span>旅かえる旅行青蛙</span>
+                    </div>
+                    <p class="customer__reviews">自從呱呱呱呱呱以後，我呱呱呱呱呱，非常感謝呱呱呱呱呱，下次呱呱呱呱呱我呱呱呱呱呱，一定呱呱呱呱呱!!!</p>
+                </div>
+            </div>
+        </section>
+        <section class="location">
+            <h2>我們在哪裡</h2>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3682.5122524306967!2d120.30156131744386!3d22.63468200000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e048c8f46cf61%3A0x5fdd8f205b0a1d00!2z6YeO6aWM5pel5byP54eS6IKJIOeBq-eDpOWFqeWQg-a0u-azsOWci-idpuWQg-WIsOmjvSDkuIPos6Llupc!5e0!3m2!1szh-TW!2stw!4v1595323167589!5m2!1szh-TW!2stw"
+                width="100%" height="350" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                tabindex="0"></iframe>
+        </section>
+    </main>
+    <footer>
+        <div class="restaurant__info">
+            <ul>
+                <li>餐館地址：天上地下天堂路三分之一里六段520號</li>
+                <li>訂位專線：02-1314-5566</li>
+                <li>營業時間：週一至週五 09:00~18:00 / 週六、週日、國定假日（含連假）休息</li>
+                <li>email：service@justabite.com.tw</li>
+            </ul>
+            <div>
+                <div class="logo">Just A Bite!</div>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Youtube</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <span>Copyright &copy; 2020 Just A Bite All Rights Reserved.</span>
+            <span>咬一口股份有限公司版權所有</span>
+        </div>
+    </footer> 
+</body>
+</html>
