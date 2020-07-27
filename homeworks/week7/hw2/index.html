@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>咬一口廚房</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/minireset.css/0.0.2/minireset.min.css' />
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: myFont;
+            src: local('微軟正黑體');
+            unicode-range: U+4E00-9FFF;
+        }
+
+        @font-face {
+            font-family: myFont;
+            src: url(/week6/hw1/font/Questrial-Regular.ttf);
+            unicode-range: U+00-007F;
+        }
+
+        body {
+            font-family: myFont;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .logo {
+            color: #489846;
+            font-size: 30px;
+        }
+
+        h1 {
+            transition: all 0.5s ease-out;
+        }
+
+        h1:hover {
+            transform: scale(1.2);
+        }
+
+        @media screen and (max-width: 768px) {
+            h1 .logo {
+                font-size: 60px;
+                text-align: center;
+            }
+
+            h1:hover {
+                transform: scale(1.05);
+            }
+        }
+
+        nav {
+            max-width: 1440px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav ul {
+            display: flex;
+        }
+
+        nav ul li a {
+            display: inline-block;
+            margin: 20px 10px 20px 0;
+            padding: 10px 25px;
+            border-radius: 10px;
+            transition: all, 0.5s;
+        }
+
+        nav ul li:nth-child(1) a {
+            background: #ff7286;
+            color: white;
+        }
+
+        nav ul li a:hover {
+            background: #ff7286;
+            color: white;
+        }
+
+        @media screen and (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                padding: 20px 0 0;
+            }
+
+            nav ul {
+                width: 100%;
+            }
+
+            nav ul li {
+                width: 25%;
+                text-align: center;
+                font-size: 25px;
+            }
+
+            nav ul li a {
+                display: block;
+                padding: 20px;
+                margin: 0;
+                border: none;
+                border-radius: 0;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            nav ul li {
+                width: 100%;
+                text-align: center;
+                font-size: 25px;
+            }
+
+            nav ul {
+                padding-top: 20px;
+                flex-direction: column;
+            }
+        }
+
+        main ul{
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        main li{
+            border-bottom: 1px solid #a6e2c0;
+        }
+
+        main h2{
+            color: #70b282;
+            font-size: 24px;
+            font-weight: 600;
+            padding: 25px 0;
+            cursor: pointer;
+        }
+        main h2 span{
+            color: black;
+            font-size: 18px;
+            font-weight: 400;
+        }
+        main li p{
+            padding: 0 0 45px 55px;
+            opacity: 0;
+            transition: all 1s;
+        }
+
+        @media screen and (max-width: 768px) {
+                main ul{
+                padding: 0;
+            }
+            main li{
+                padding: 0 20px;
+            }
+        }
+        footer {
+            background: #e8efee;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+
+        .restaurant__info {
+            padding: 35px 20px;
+            max-width: 1440px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .restaurant__info>div {
+            text-align: right;
+        }
+
+        .restaurant__info>div ul {
+            margin-top: 15px;
+            display: flex;
+        }
+
+        .restaurant__info>div a:hover {
+            color: red;
+        }
+
+        .restaurant__info>ul li {
+            padding: 5px 0;
+        }
+
+        .restaurant__info>div li:nth-child(1)::after,
+        .restaurant__info>div li:nth-child(2) ::after {
+            content: '/';
+            margin: 0 2px;
+            color: black;
+        }
+
+        .copyright {
+            background: #35564b;
+            text-align: center;
+            color: white;
+            padding: 15px;
+        }
+
+        @media screen and (max-width: 768px) {
+            footer {
+                margin-top: 0;
+                font-size: 20px;
+            }
+
+            .restaurant__info {
+                padding: 20px;
+                flex-direction: column-reverse;
+                align-items: center;
+                text-align: center;
+            }
+
+            .restaurant__info .logo {
+                text-align: center;
+                margin: 0;
+                font-size: 50px;
+            }
+
+            .restaurant__info>div {
+                margin-bottom: 10px;
+            }
+
+            .restaurant__info>div a {
+                font-size: 22px;
+            }
+
+            .copyright {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+
+            .copyright span:nth-child(2) {
+                padding-bottom: 5px;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .restaurant__introduce {
+                padding: 0 20px;
+            }
+
+            .restaurant__order {
+                overflow: hidden;
+            }
+
+            .restaurant__order button {
+                width: 100%;
+                padding: 50px 0;
+                color: #3e613d;
+                font-weight: 800;
+                border-radius: 0;
+                box-shadow: none;
+            }
+
+            .restaurant__order button:nth-child(1) {
+                margin: 0;
+            }
+
+            .restaurant__order button:nth-child(1):hover,
+            .restaurant__order button:nth-child(2):hover {
+                transform: scale(1.05);
+            }
+        }
+        .show{
+            opacity: 1;
+        }
+        .none{
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1><a href="#" class="logo">Just A Bite!</a></h1>
+            <ul>
+                <li><a href="#">抽個大獎</a></li>
+                <li><a href="#">我要點餐</a></li>
+                <li><a href="#">查詢訂單</a></li>
+                <li><a href="#">常見問題</a></li>
+            </ul>
+        </nav>
+        <div class="banner"></div>
+    </header>
+    <main>
+        <ul>
+            <li>
+                <h2>Q1：<span>如何辦理退貨？</span></h2>
+                <p class="none">若產品本身瑕疵或運送過程導致新品瑕疵，到貨7日內可與客服聯繫如何更換新品。請先登入會員，點選該筆「訂單編號」，於「對此訂單留下私訊」留言後，將有人員協助處理。</p>
+            </li>
+            <li>
+                <h2>Q2：<span>目前提供哪些付款方式？</span></h2>
+                <p class="none">線上信用卡付款、虛擬ATM繳費(虛擬帳號)、超商代碼繳費(非超商取貨付款)。</p>
+            </li>
+            <li>
+                <h2>Q3：<span>線上刷卡如何操作呢？</span></h2>
+                <p class="none">在網站下訂單 > 付款方式：選擇信用卡線上刷卡 > 輸入信用卡資料 > 進行 3D 驗證（依發卡機構規定） > 完成刷卡。</p>
+            </li>
+            <li>
+                <h2>Q4：<span>如何查詢目前訂單的處理情況？</span></h2>
+                <p class="none">請登入會員後，點選該筆「訂單編號」即可得知訂單進度，當訂單進入出貨準備流程時，我們將發送電子郵件寄到您的會員信箱地址。</p>
+            </li>
+            <li>
+                <h2>Q5：<span>訂單成立後，是否可以取消或是更改訂單數量及商品？</span></h2>
+                <p class="none">在訂單確認前，若您需要變更，請自行將整筆訂單取消後，再重新下單。若您的訂單已確認，即無法取消、修改。</p>
+            </li>
+            <li>
+                <h2>Q6：<span>我想購買的商品已經缺貨，什麼時候會進貨呢？</span></h2>
+                <p class="none">針對缺貨的商品，您可以在該商品頁面設定「貨到通知」。「貨到通知」僅為告知性質(非預購)，收到貨到信件後，還需請您返回網路商店完成下單。</p>
+            </li>
+        </ul>
+    </main>
+    <footer>
+        <div class="restaurant__info">
+            <ul>
+                <li>餐館地址：天上地下天堂路三分之一里六段520號</li>
+                <li>訂位專線：02-1314-5566</li>
+                <li>營業時間：週一至週五 09:00~18:00 / 週六、週日、國定假日（含連假）休息</li>
+                <li>email：service@justabite.com.tw</li>
+            </ul>
+            <div>
+                <div class="logo">Just A Bite!</div>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Youtube</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <span>Copyright &copy; 2020 Just A Bite All Rights Reserved.</span>
+            <span>咬一口股份有限公司版權所有</span>
+        </div>
+    </footer>
+    <script src="all.js"></script>
+</body>
+
+</html>
