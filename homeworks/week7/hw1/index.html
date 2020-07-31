@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/minireset.css/0.0.2/minireset.css' />
+    <title>新拖延運動報名表單</title>
+    <style>
+        body {
+            font-family: '微軟正黑體';
+        }
+
+        form {
+            border-top: #fad312 solid 8px;
+            padding: 50px 40px 35px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 35px;
+        }
+
+        header li {
+            font-size: 14px;
+            margin-bottom: 11px;
+        }
+
+        header p {
+            color: red;
+            margin: 11px 0 55px;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        h2::after {
+            content: ' *';
+            color: red;
+        }
+
+        main input {
+            width: 220px;
+            height: 23px;
+            margin-bottom: 50px;
+            border: #d0d0d0 solid 1px;
+        }
+        main li {
+            position: relative;
+        }
+        main ul li:nth-child(4) {
+            display: flex;
+            flex-direction: column;
+        }
+
+        main ul li p {
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        .null{
+            color: red;
+            position: absolute;
+            left: 0;
+            top: 70%;
+        }
+        main ul li div:nth-child(3) {
+            margin-top: -30px;
+        }
+
+        .radio {
+            height: 12px;
+            width: 12px;
+            margin-right: 10px;
+        }
+
+        footer input {
+            border: 0;
+            background: #fad312;
+            padding: 12px 32px;
+            border-radius: 3px;
+            font-size: 15px;
+            margin-bottom: 34px;
+        }
+
+        footer input p {
+            font-size: 14px;
+        }
+
+        @media screen and (min-width: 768px) {
+            header {
+                text-align: center;
+            }
+
+            header p {
+                margin-bottom: 10px;
+            }
+
+            main ul {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+            }
+
+            main input {
+                width: 100%;
+            }
+
+            main ul li {
+                width: 30%;
+            }
+
+            main ul li input {
+                margin-bottom: 40px;
+            }
+
+            footer {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <header>
+            <h1>新拖延運動報名表單</h1>
+            <ul>
+                <li>活動日期：2020/12/10 ~ 2020/12/11</li>
+                <li>活動地點：台北市大安區新生南路二段1號</li>
+            </ul>
+            <p>* 必填</p>
+        </header>
+        <main>
+            <ul>
+                <li>
+                    <h2>暱稱</h2>
+                    <input type="text" class="nickname" placeholder="您的回答" required>
+                    <span class="null hide">內容不得為空</span>
+                </li>
+                <li>
+                    <h2>電子郵件</h2>
+                    <input type="text" class="email" placeholder="您的電子郵件" required>
+                    <span class="null hide">信箱格式錯誤或內容為空</span>
+                </li>
+                <li>
+                    <h2>手機號碼</h2>
+                    <input type="text" class="phone" placeholder="您的手機號碼" required>
+                    <span class="null hide">手機格式錯誤或內容為空</span>
+                </li>
+                <li>
+                    <h2>報名類型</h2>
+                    <div>
+                        <input class="radio" type="radio" id='bed__dream'name="game__type" required><label for="bed__dream">躺在床上用想像力實作</label>
+                    </div>
+                    <div>
+                        <input class="radio" type="radio" id='phone__surfing'name='game__type' required><label for="phone__surfing">趴在地上滑手機找現成的</label>
+                    </div>
+                    <span class="null hide">請選擇報名類型</span>
+                </li>
+                <li>
+                    <h2>怎麼知道這個活動的？</h2>
+                    <input type="text" placeholder="您的回答" required class="howknow">
+                    <span class="null hide">內容不得為空</span>
+                </li>
+                <li>
+                    <h3>其他</h3>
+                    <p>對活動的一些建議</p>
+                    <input type="text" placeholder="您的回答" class="advice">
+                </li>
+            </ul>
+        </main>
+        <footer>
+            <input type="submit" value="提交" class="submit">
+            <p>請勿透過表單送出您的密碼。</p>
+        </footer>
+    </form>
+    <script src="all.js"></script>
+</body>
+
+</html>
