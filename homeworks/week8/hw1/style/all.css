@@ -1,0 +1,410 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+button {
+  border: none;
+  background-color: unset;
+  outline: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  padding: 0;
+}
+
+@font-face {
+  font-family: myFont;
+  src: local("微軟正黑體");
+  unicode-range: U+4E00-9FFF;
+}
+
+@font-face {
+  font-family: myFont;
+  src: url(/week6/hw1/font/Questrial-Regular.ttf);
+  unicode-range: U+00-007F;
+}
+
+body {
+  font-family: myFont;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.logo {
+  color: #489846;
+  font-size: 30px;
+}
+
+h1 {
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+h1:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+@media screen and (max-width: 768px) {
+  h1 .logo {
+    font-size: 60px;
+    text-align: center;
+  }
+  h1 .logo:hover {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+}
+
+nav {
+  max-width: 1440px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+nav ul li:nth-child(1) a {
+  background: #ff7286;
+  color: white;
+}
+
+nav li a {
+  display: inline-block;
+  margin: 20px 10px 20px 0;
+  padding: 10px 25px;
+  border-radius: 10px;
+  -webkit-transition: all, 0.5s;
+  transition: all, 0.5s;
+}
+
+nav li a:hover {
+  background: #ff7286;
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 20px 0 0;
+  }
+  nav ul {
+    width: 100%;
+  }
+  nav ul li {
+    width: 25%;
+    text-align: center;
+    font-size: 25px;
+  }
+  nav ul li a {
+    display: block;
+    padding: 20px;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  nav ul {
+    padding-top: 20px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  nav ul li {
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+  }
+}
+
+footer {
+  background: #e8efee;
+  margin-top: 40px;
+  font-size: 14px;
+}
+
+.restaurant__info {
+  padding: 35px 20px;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.restaurant__info > div {
+  text-align: right;
+}
+
+.restaurant__info > div ul {
+  margin-top: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.restaurant__info > div a:hover {
+  color: red;
+}
+
+.restaurant__info > div > ul li {
+  padding: 5px 0;
+}
+
+.restaurant__info > divli:nth-child(1)::after, .restaurant__info > divli:nth-child(2)::after {
+  content: '/';
+  margin: 0 2px;
+  color: black;
+}
+
+.copyright {
+  background: #35564b;
+  text-align: center;
+  color: white;
+  padding: 15px;
+}
+
+@media screen and (max-width: 768px) {
+  footer {
+    margin-top: 0;
+    font-size: 20px;
+  }
+  .restaurant__info {
+    padding: 20px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+  }
+  .restaurant__info .logo {
+    text-align: center;
+    margin: 0;
+    font-size: 50px;
+  }
+  .restaurant__info > div {
+    margin-bottom: 10px;
+  }
+  .restaurant__info > div a {
+    font-size: 22px;
+  }
+  .copyright {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .copyrightspan:nth-child(2) {
+    padding-bottom: 5px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .restaurant__introduce {
+    padding: 0 20px;
+  }
+  .restaurant__order {
+    overflow: hidden;
+  }
+  .restaurant__order button {
+    width: 100%;
+    padding: 50px 0;
+    color: #3e613d;
+    font-weight: 800;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .restaurant__order button:nth-child(1) {
+    margin: 0;
+  }
+  .restaurant__order button:nth-child(1):hover, .restaurant__order button:nth-child(2):hover {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+}
+
+.show {
+  opacity: 1;
+}
+
+.none {
+  display: none;
+}
+
+main {
+  height: 767px;
+  position: relative;
+}
+
+main .content {
+  position: absolute;
+  background-color: white;
+  border-radius: 16px;
+  width: 500px;
+  left: 50%;
+  top: 43%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 24px 20px;
+}
+
+main .content h2 {
+  color: #5ec1b6;
+  font-size: 24px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 42px;
+}
+
+main .content p {
+  font-size: 18px;
+  font-weight: 600;
+  -webkit-box-flex: 1.7;
+      -ms-flex: 1.7;
+          flex: 1.7;
+}
+
+main .content span {
+  -webkit-box-flex: 6;
+      -ms-flex: 6;
+          flex: 6;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+main .content li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 20px;
+  padding-bottom: 25px;
+  border-bottom: 1px #cdcdcd dotted;
+}
+
+main .prize {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+main .prize h2 {
+  font-size: 36px;
+  text-align: center;
+}
+
+main button {
+  display: block;
+  color: white;
+  width: 400px;
+  font-size: 20px;
+  border-radius: 8px;
+  background-color: #e62a45;
+  padding: 18px 0;
+  margin: 36px auto 0;
+}
+
+footer {
+  margin-top: 0;
+}
