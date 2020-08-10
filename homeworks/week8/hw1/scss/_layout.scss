@@ -1,0 +1,205 @@
+@font-face {
+    font-family: myFont;
+    src: local('微軟正黑體');
+    unicode-range: U+4E00-9FFF;
+}
+
+@font-face {
+    font-family: myFont;
+    src: url(/week6/hw1/font/Questrial-Regular.ttf);
+    unicode-range: U+00-007F;
+}
+
+body {
+    font-family: myFont;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.logo {
+    color: #489846;
+    font-size: 30px;
+}
+
+h1 {
+    transition: all 0.5s ease-out;
+    &:hover{
+        transform: scale(1.2);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    h1 .logo {
+        font-size: 60px;
+        text-align: center;
+        &:hover{
+            transform: scale(1.05);
+        }
+    }
+}
+
+nav {
+    max-width: 1440px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 20px;
+    ul{
+        display: flex;
+        li:nth-child(1) a{
+            background: #ff7286;
+            color: white;
+        }
+    }
+    li a{
+        display: inline-block;
+        margin: 20px 10px 20px 0;
+        padding: 10px 25px;
+        border-radius: 10px;
+        transition: all, 0.5s;
+        &:hover{
+            background: #ff7286;
+            color: white;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 20px 0 0;
+        ul{
+            width: 100%;
+            li{
+                width: 25%;
+                text-align: center;
+                font-size: 25px;
+                a{
+                    display: block;
+                padding: 20px;
+                margin: 0;
+                border: none;
+                border-radius: 0;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    nav ul {
+        padding-top: 20px;
+        flex-direction: column;
+        li{
+            width: 100%;
+            text-align: center;
+            font-size: 25px;
+        }
+    }
+}
+
+footer {
+    background: #e8efee;
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+.restaurant__info {
+    padding: 35px 20px;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    >div{
+        text-align: right;
+        ul{
+            margin-top: 15px;
+            display: flex;
+        }
+        a:hover{
+            color: red;
+        }
+        >ul li{
+            padding: 5px 0;
+        }
+        &li:nth-child(1)::after, &li:nth-child(2)::after{
+            content: '/';
+            margin: 0 2px;
+            color: black;
+        }
+    }
+}
+
+.copyright {
+    background: #35564b;
+    text-align: center;
+    color: white;
+    padding: 15px;
+}
+
+@media screen and (max-width: 768px) {
+    footer {
+        margin-top: 0;
+        font-size: 20px;
+    }
+
+    .restaurant__info {
+        padding: 20px;
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+        .logo{
+            text-align: center;
+            margin: 0;
+            font-size: 50px;
+        }
+        >div{
+            margin-bottom: 10px;
+            a{
+                font-size: 22px;
+            }
+        }
+    }
+
+    .copyright {
+        display: flex;
+        flex-direction: column-reverse;
+        &span:nth-child(2){
+            padding-bottom: 5px;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .restaurant__introduce {
+        padding: 0 20px;
+    }
+
+    .restaurant__order {
+        overflow: hidden;
+        button{
+            width: 100%;
+            padding: 50px 0;
+            color: #3e613d;
+            font-weight: 800;
+            border-radius: 0;
+            box-shadow: none;
+            &:nth-child(1){
+                margin: 0;
+            }
+            &:nth-child(1):hover, &:nth-child(2):hover{
+                transform: scale(1.05);
+            }
+        }
+    }
+}
+.show{
+    opacity: 1;
+}
+.none{
+    display: none;
+}

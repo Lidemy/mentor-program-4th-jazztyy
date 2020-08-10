@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Twitch 熱門遊戲列表</title>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js'></script>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="./dist/style/all.min.css">
+    </head>
+
+    <body>
+        <header>
+            <h1>Twitch 熱門遊戲實況列表</h1>
+            <button>更新列表</button>
+            <nav>
+                <ul class="gameList">
+                </ul>
+            </nav>
+        </header>
+        <main class="container">
+            <ul class="streamList">
+            </ul>
+        </main>
+        <script src="all.js"></script>
+    </body>
+
+</html>
