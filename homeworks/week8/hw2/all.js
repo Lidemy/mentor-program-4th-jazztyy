@@ -69,7 +69,7 @@ function init() {
   data.game = [];
   axios({
     method: 'get',
-    url: `${API}games/top?limit=5`,
+    url: `${API}games/top?limit=6`,
     headers: {
       Accept: `${accept}`,
       'Client-ID': `${id}`,
@@ -79,6 +79,7 @@ function init() {
     topGame.forEach((game) => {
       data.game.push(game.game.name);
     });
+    console.log(data.game);
     searchStreams(data.game[0]);
     renderNav();
   });
